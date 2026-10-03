@@ -47,7 +47,7 @@ export default function App() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
   // Filter state for "Voir tous nos produits"
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'snacks' | 'pro'>('all');
+  const [selectedFilter, setSelectedFilter] = useState<'all' | 'snacks' | 'epices' | 'pro'>('all');
 
   // Handle Cart
   const handleAddToCart = (product: Product, quantity: number = 1) => {
@@ -217,14 +217,14 @@ export default function App() {
               />
 
               {/* Overlapping Products Composition - Organic breathing animation */}
-              <div className="relative w-full max-w-[560px] flex items-center justify-center select-none">
+              <div className="relative w-full max-w-[620px] flex items-center justify-center select-none">
                 {/* 1. ROI POP 25KG gros sac vert à gauche (derrière) */}
                 <motion.div
                   animate={{ y: [0, -8, 0], rotate: [0, -1, 0] }}
                   transition={{ repeat: Infinity, duration: 4.8, ease: 'easeInOut' }}
                   whileHover={{ scale: 1.1, y: -14, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
-                  className="w-[36%] max-w-[130px] sm:max-w-[195px] -mr-6 sm:-mr-10 -mb-2 z-10 cursor-pointer shrink-0"
+                  className="w-[30%] max-w-[120px] sm:max-w-[170px] -mr-5 sm:-mr-8 -mb-2 z-10 cursor-pointer shrink-0"
                   onClick={() => openProduct(PRODUCTS[0])}
                   title="Voir ROI POP 25KG"
                 >
@@ -242,7 +242,7 @@ export default function App() {
                   transition={{ repeat: Infinity, duration: 4.2, delay: 0.3, ease: 'easeInOut' }}
                   whileHover={{ scale: 1.12, y: -16, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
-                  className="w-[32%] max-w-[115px] sm:max-w-[170px] -mr-5 sm:-mr-8 z-20 cursor-pointer shrink-0"
+                  className="w-[26%] max-w-[105px] sm:max-w-[150px] -mr-4 sm:-mr-7 z-20 cursor-pointer shrink-0"
                   onClick={() => openProduct(PRODUCTS[1])}
                   title="Voir CROKS! Caramel au café"
                 >
@@ -254,14 +254,32 @@ export default function App() {
                   />
                 </motion.div>
 
-                {/* 3. DU ROI Huile Végétale 30ml petit sachet vert devant */}
+                {/* 3. NOIX DE MUSCADE En Poudre sachet d'épices DU ROI */}
+                <motion.div
+                  animate={{ y: [0, -10, 0], rotate: [0, -1, 0] }}
+                  transition={{ repeat: Infinity, duration: 4.0, delay: 0.6, ease: 'easeInOut' }}
+                  whileHover={{ scale: 1.14, y: -16, zIndex: 45 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="w-[26%] max-w-[105px] sm:max-w-[150px] -mr-4 sm:-mr-7 z-25 cursor-pointer mt-1 sm:mt-2 shrink-0"
+                  onClick={() => openProduct(PRODUCTS[3])}
+                  title="Voir NOIX DE MUSCADE En Poudre"
+                >
+                  <img
+                    src="/images/noix-de-muscade-en-poudre.png"
+                    alt="NOIX DE MUSCADE En Poudre - Sachet officiel"
+                    className="w-full h-auto object-contain bg-transparent select-none"
+                    style={{ filter: 'drop-shadow(0 14px 22px rgba(0,0,0,0.42))' }}
+                  />
+                </motion.div>
+
+                {/* 4. DU ROI Huile Végétale 30ml petit sachet vert devant */}
                 <motion.div
                   animate={{ y: [0, -7, 0], rotate: [0, -1.5, 0] }}
-                  transition={{ repeat: Infinity, duration: 3.6, delay: 0.7, ease: 'easeInOut' }}
+                  transition={{ repeat: Infinity, duration: 3.6, delay: 0.8, ease: 'easeInOut' }}
                   whileHover={{ scale: 1.15, y: -12, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
-                  className="w-[26%] max-w-[95px] sm:max-w-[145px] -mr-5 sm:-mr-8 z-30 cursor-pointer mt-5 sm:mt-8 shrink-0"
-                  onClick={() => openProduct(PRODUCTS[3])}
+                  className="w-[21%] max-w-[85px] sm:max-w-[125px] -mr-4 sm:-mr-6 z-30 cursor-pointer mt-6 sm:mt-9 shrink-0"
+                  onClick={() => openProduct(PRODUCTS[4])}
                   title="Voir DU ROI À l'huile végétale"
                 >
                   <img
@@ -272,13 +290,13 @@ export default function App() {
                   />
                 </motion.div>
 
-                {/* 4. ROI POP 100% Naturel sachet bleu-vert premium avec gobelet rayé POP CORN à droite */}
+                {/* 5. ROI POP 100% Naturel sachet bleu-vert premium avec gobelet rayé POP CORN à droite */}
                 <motion.div
                   animate={{ y: [0, -12, 0], rotate: [0, 1, 0] }}
                   transition={{ repeat: Infinity, duration: 4.5, delay: 0.5, ease: 'easeInOut' }}
                   whileHover={{ scale: 1.1, y: -18, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
-                  className="w-[38%] max-w-[140px] sm:max-w-[210px] z-40 cursor-pointer shrink-0"
+                  className="w-[32%] max-w-[130px] sm:max-w-[185px] z-40 cursor-pointer shrink-0"
                   onClick={() => openProduct(PRODUCTS[2])}
                   title="Voir ROI POP 100% Naturel"
                 >
@@ -333,78 +351,90 @@ export default function App() {
           </motion.div>
 
           {/* Grille responsive de cartes produits avec apparition décalée */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {PRODUCTS.slice(0, 3).map((prod, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PRODUCTS.filter((p) => p.id !== 'roi-pop-25kg').map((prod, index) => (
               <motion.div
                 key={prod.id}
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
                 whileHover={{ y: -8, transition: { duration: 0.25 } }}
                 className="group bg-white rounded-[20px] p-5 sm:p-6 border border-[#e8ded0] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.09)] transition-shadow duration-300 flex flex-col justify-between relative"
               >
-                {/* Decorative plus badge on Card 3 matching the screenshot */}
-                {index === 2 && (
-                  <motion.button
-                    whileHover={{ scale: 1.15, rotate: 90 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => handleAddToCart(prod, 1)}
-                    className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-[#fdf9f0] hover:bg-[#3a5f2d] text-slate-500 hover:text-white flex items-center justify-center transition-colors shadow-xs cursor-pointer"
-                    title="Ajout rapide au panier"
-                    aria-label="Ajouter au panier"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </motion.button>
-                )}
+                {/* Decorative plus badge */}
+                <motion.button
+                  whileHover={{ scale: 1.15, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => handleAddToCart(prod, 1)}
+                  className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-[#fdf9f0] hover:bg-[#3a5f2d] text-slate-500 hover:text-white flex items-center justify-center transition-colors shadow-xs cursor-pointer z-10"
+                  title="Ajout rapide au panier"
+                  aria-label="Ajouter au panier"
+                >
+                  <Plus className="w-4 h-4" />
+                </motion.button>
 
                 <div>
+                  {/* Badge */}
+                  {prod.badge && (
+                    <span className="inline-block text-[10px] font-bold text-[#2d4a22] bg-[#eef6ec] px-2.5 py-0.5 rounded-full mb-2">
+                      {prod.badge}
+                    </span>
+                  )}
+
                   {/* Image produit top centered */}
                   <div
                     onClick={() => openProduct(prod)}
-                    className="w-full h-[180px] sm:h-[220px] flex items-center justify-center mb-4 sm:mb-6 cursor-pointer bg-transparent overflow-hidden"
+                    className="w-full h-[170px] sm:h-[190px] flex items-center justify-center mb-3 sm:mb-4 cursor-pointer bg-transparent overflow-hidden"
                   >
                     <motion.img
                       whileHover={{ scale: 1.08 }}
                       transition={{ duration: 0.3 }}
                       src={prod.image}
                       alt={prod.name}
-                      className="max-h-[170px] sm:max-h-[200px] w-auto object-contain bg-transparent select-none"
+                      className="max-h-[160px] sm:max-h-[180px] w-auto object-contain bg-transparent select-none"
                       style={{ filter: 'drop-shadow(0 10px 18px rgba(0,0,0,0.14))' }}
                     />
                   </div>
 
                   {/* Titre bold */}
-                  <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#24381d] mb-1.5 sm:mb-2 leading-tight">
+                  <h3 className="font-heading font-extrabold text-sm sm:text-base text-[#24381d] mb-1 sm:mb-1.5 leading-tight">
                     {prod.name}
                   </h3>
 
-                  {/* Description 14px gris */}
-                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-5 sm:mb-6">
+                  {/* Description 13px gris */}
+                  <p className="text-xs text-slate-500 leading-relaxed mb-4 line-clamp-3">
                     {prod.description}
                   </p>
                 </div>
 
-                {/* Bouton beige "Voir plus" + flèche verte ronde à droite */}
-                <div className="flex items-center justify-between pt-2 border-t border-[#f4ede1]">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => openProduct(prod)}
-                    className="px-5 py-2.5 bg-[#d4b896] hover:bg-[#c8aa84] text-[#24381d] font-heading font-semibold text-xs rounded-full transition-colors shadow-xs cursor-pointer"
-                  >
-                    Voir plus
-                  </motion.button>
+                {/* Prix, poids et bouton "Voir plus" */}
+                <div>
+                  <div className="flex items-center justify-between mb-3 text-xs">
+                    <span className="text-slate-400">{prod.weight}</span>
+                    <span className="font-bold text-[#3a5f2d]">{prod.price}</span>
+                  </div>
 
-                  <motion.button
-                    whileHover={{ scale: 1.15, rotate: 45 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => openProduct(prod)}
-                    className="w-8 h-8 rounded-full bg-[#2d4a22] hover:bg-[#3a5f2d] text-white flex items-center justify-center transition-colors shadow-xs cursor-pointer"
-                    aria-label={`En savoir plus sur ${prod.name}`}
-                  >
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.button>
+                  <div className="flex items-center justify-between pt-2 border-t border-[#f4ede1]">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => openProduct(prod)}
+                      className="px-4 py-2 bg-[#d4b896] hover:bg-[#c8aa84] text-[#24381d] font-heading font-semibold text-xs rounded-full transition-colors shadow-xs cursor-pointer"
+                    >
+                      Voir plus
+                    </motion.button>
+
+                    <motion.button
+                      whileHover={{ scale: 1.15, rotate: 45 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => openProduct(prod)}
+                      className="w-8 h-8 rounded-full bg-[#2d4a22] hover:bg-[#3a5f2d] text-white flex items-center justify-center transition-colors shadow-xs cursor-pointer"
+                      aria-label={`En savoir plus sur ${prod.name}`}
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -924,6 +954,16 @@ export default function App() {
                   Snacks & Popcorn
                 </button>
                 <button
+                  onClick={() => setSelectedFilter('epices')}
+                  className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
+                    selectedFilter === 'epices'
+                      ? 'bg-[#3a5f2d] text-white'
+                      : 'bg-white text-slate-700 border border-slate-200'
+                  }`}
+                >
+                  Épices & Aromates
+                </button>
+                <button
                   onClick={() => setSelectedFilter('pro')}
                   className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                     selectedFilter === 'pro'
@@ -937,7 +977,8 @@ export default function App() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
                 {PRODUCTS.filter((p) => {
-                  if (selectedFilter === 'snacks') return p.id !== 'roi-pop-25kg';
+                  if (selectedFilter === 'snacks') return p.category === 'Snacks';
+                  if (selectedFilter === 'epices') return p.category === 'Épices';
                   if (selectedFilter === 'pro') return p.id === 'roi-pop-25kg';
                   return true;
                 }).map((prod) => (

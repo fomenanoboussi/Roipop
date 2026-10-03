@@ -1,6 +1,8 @@
 export interface Product {
   id: string;
   name: string;
+  brand?: string;
+  category?: string;
   tagline: string;
   description: string;
   longDescription: string;
@@ -25,6 +27,8 @@ export const PRODUCTS: Product[] = [
   {
     id: 'roi-pop-25kg',
     name: 'ROI POP 25KG',
+    brand: 'Du ROI',
+    category: 'Gros Volume',
     tagline: 'Un mélange nutritif et équilibré, riche en fibres et éléments naturels.',
     description: 'Un mélange nutritif et équilibré, riche en fibres et éléments naturels.',
     longDescription:
@@ -53,6 +57,8 @@ export const PRODUCTS: Product[] = [
   {
     id: 'croks-caramel',
     name: 'CROKS! Caramel au café',
+    brand: 'Du ROI',
+    category: 'Snacks',
     tagline: "Goût sucré-salé, caramel et café infusé pour une gourmandise de l'Angleterre.",
     description: "Goût sucré-salé, caramel et café infusé pour une gourmandise de l'Angleterre.",
     longDescription:
@@ -85,6 +91,8 @@ export const PRODUCTS: Product[] = [
   {
     id: 'roi-pop-naturel',
     name: 'ROI POP 100% Naturel',
+    brand: 'Du ROI',
+    category: 'Snacks',
     tagline: 'Popcorn 100% naturel, croustillant et léger, parfait pour un moment de détente.',
     description: 'Popcorn 100% naturel, croustillant et léger, parfait pour un moment de détente.',
     longDescription:
@@ -114,8 +122,41 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
+    id: 'noix-muscade',
+    name: 'NOIX DE MUSCADE En Poudre',
+    brand: 'Du ROI',
+    category: 'Épices',
+    tagline: 'Noix de muscade en poudre pure, sans sel, sans sucre.',
+    description:
+      'Noix de muscade en poudre pure, sans sel, sans sucre. Parfait pour assaisonner vos plats, desserts et boissons chaudes.',
+    longDescription:
+      'Noix de muscade en poudre 100% naturelle sélectionnée par DU ROI. Moulue finement à froid pour conserver toute l\'intensité de ses huiles essentielles aromatiques et ses vertus digestives. Sans conservateur, sans sel ajouté et sans sucre.',
+    price: '1 200 FCFA',
+    priceNumeric: 1200,
+    weight: 'Sachet 50g',
+    image: '/images/noix-de-muscade-en-poudre.png',
+    originalUpload: '/images/noix-de-muscade-en-poudre.png',
+    badge: '100% Natural Ingredients',
+    nutrition: {
+      calories: '525 kcal / 100g',
+      fibers: '20.8 g',
+      proteins: '5.8 g',
+      lipids: '36.3 g',
+      origin: 'Sélection DU ROI Épices & Aromates',
+    },
+    ingredients: ['100% Noix de muscade pure en poudre (Myristica fragrans)'],
+    benefits: [
+      'Pureté absolue : Sans sel, sans sucre, sans conservateur',
+      'Arôme chaud, subtil et boisé inimitable',
+      'Aide digestive naturelle et propriétés relaxantes',
+      'Sachet hermétique multicouche préservant la fraîcheur',
+    ],
+  },
+  {
     id: 'du-roi-huile-30ml',
     name: "DU ROI À l'huile végétale",
+    brand: 'Du ROI',
+    category: 'Huiles',
     tagline: 'Un goût délicieux et unique, sachet fraîcheur 30ml fabriqué en Belgique.',
     description: 'Assaisonnement de qualité supérieure à l\'huile végétale, arôme délicieux pour vos préparations.',
     longDescription:
