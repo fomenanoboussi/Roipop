@@ -32,8 +32,8 @@ export const PRODUCTS: Product[] = [
     price: '45 000 FCFA',
     priceNumeric: 45000,
     weight: 'Sac de 25 KG',
-    image: '/src/assets/images/product_roi_pop_25kg_transparent.png',
-    originalUpload: '/WhatsApp Image 2026-10-03 at 12.48.16 (1).jpeg',
+    image: '/images/roi-pop-25kg.png',
+    originalUpload: '/images/roi-pop-25kg.png',
     badge: 'Format Pro 25KG',
     nutrition: {
       calories: '365 kcal / 100g',
@@ -60,8 +60,8 @@ export const PRODUCTS: Product[] = [
     price: '1 500 FCFA',
     priceNumeric: 1500,
     weight: 'Sachet 150g',
-    image: '/src/assets/images/product_croks_caramel_transparent.png',
-    originalUpload: '/WhatsApp Image 2026-10-03 at 12.48.17.jpeg',
+    image: '/images/croks-caramel-cafe.png',
+    originalUpload: '/images/croks-caramel-cafe.png',
     badge: 'Gourmet CROKS!',
     nutrition: {
       calories: '440 kcal / 100g',
@@ -92,8 +92,8 @@ export const PRODUCTS: Product[] = [
     price: '1 000 FCFA',
     priceNumeric: 1000,
     weight: 'Sachet 100g',
-    image: '/src/assets/images/product_roi_pop_naturel_transparent.png',
-    originalUpload: '/WhatsApp Image 2026-10-03 at 12.48.16.jpeg',
+    image: '/images/roi-pop-100-naturel-premium.png',
+    originalUpload: '/images/roi-pop-100-naturel-premium.png',
     badge: '100% Naturel',
     nutrition: {
       calories: '380 kcal / 100g',
@@ -123,8 +123,8 @@ export const PRODUCTS: Product[] = [
     price: '500 FCFA',
     priceNumeric: 500,
     weight: 'Sachet 30 ml',
-    image: '/src/assets/images/product_du_roi_huile_30ml_transparent.png',
-    originalUpload: '/WhatsApp Image 2026-10-03 at 12.48.16 (2).jpeg',
+    image: '/images/du-roi-huile-30ml.png',
+    originalUpload: '/images/du-roi-huile-30ml.png',
     badge: 'Fabriqué en Belgique',
     nutrition: {
       calories: '820 kcal / 100ml',
@@ -161,7 +161,7 @@ export const FABRICATION_STEPS: Step[] = [
     title: 'La récolte optimale',
     description:
       'La récolte a lieu lorsque les épis de maïs atteignent leur pleine maturité, garantissant une concentration optimale de composés nutritionnels actifs.',
-    image: '/src/assets/images/step_corn_harvest_transparent.png',
+    image: '/images/corn-harvest.png',
   },
   {
     id: 'step-2',
@@ -169,7 +169,7 @@ export const FABRICATION_STEPS: Step[] = [
     title: 'Sélection & Nettoyage',
     description:
       'Sélection et nettoyage méticuleux de chaque grain pour maintenir les normes de pureté et de qualité les plus élevées pour nos produits.',
-    image: '/src/assets/images/step_corn_harvest_transparent.png',
+    image: '/images/corn-harvest.png',
   },
   {
     id: 'step-3',
@@ -177,7 +177,7 @@ export const FABRICATION_STEPS: Step[] = [
     title: 'Transformation artisanale',
     description:
       'Transformation artisanale en croks, farine ou popcorn de qualité supérieure à l\'aide de techniques qui préservent les composés bénéfiques naturels du maïs.',
-    image: '/src/assets/images/product_roi_pop_naturel_transparent.png',
+    image: '/images/roi-pop-100-naturel-premium.png',
   },
   {
     id: 'step-4',
@@ -185,7 +185,7 @@ export const FABRICATION_STEPS: Step[] = [
     title: 'Conditionnement & Fraîcheur',
     description:
       'Conditionnement et mise en sachet du ROI POP 100% Naturel, prêt à la dégustation, conservant toute la fraîcheur et le croustillant du maïs.',
-    image: '/src/assets/images/product_roi_pop_naturel_transparent.png',
+    image: '/images/roi-pop-100-naturel-premium.png',
   },
 ];
 

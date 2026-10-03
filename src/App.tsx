@@ -188,7 +188,7 @@ export default function App() {
                   title="Voir ROI POP 25KG"
                 >
                   <img
-                    src="/src/assets/images/product_roi_pop_25kg_transparent.png"
+                    src="/images/roi-pop-25kg.png"
                     alt="ROI POP 25KG - Sac officiel"
                     className="w-full h-auto object-contain bg-transparent select-none"
                     style={{ filter: 'drop-shadow(0 14px 20px rgba(0,0,0,0.35))' }}
@@ -202,7 +202,7 @@ export default function App() {
                   title="Voir CROKS! Caramel au café"
                 >
                   <img
-                    src="/src/assets/images/product_croks_caramel_transparent.png"
+                    src="/images/croks-caramel-cafe.png"
                     alt="CROKS! Caramel au café - Sachet officiel"
                     className="w-full h-auto object-contain bg-transparent select-none"
                     style={{ filter: 'drop-shadow(0 14px 22px rgba(0,0,0,0.4))' }}
@@ -216,7 +216,7 @@ export default function App() {
                   title="Voir DU ROI À l'huile végétale"
                 >
                   <img
-                    src="/src/assets/images/product_du_roi_huile_30ml_transparent.png"
+                    src="/images/du-roi-huile-30ml.png"
                     alt="DU ROI À l'huile végétale 30ml"
                     className="w-full h-auto object-contain bg-transparent select-none"
                     style={{ filter: 'drop-shadow(0 12px 18px rgba(0,0,0,0.45))' }}
@@ -230,7 +230,7 @@ export default function App() {
                   title="Voir ROI POP 100% Naturel"
                 >
                   <img
-                    src="/src/assets/images/product_roi_pop_naturel_transparent.png"
+                    src="/images/roi-pop-100-naturel-premium.png"
                     alt="ROI POP 100% Naturel avec gobelet rayé"
                     className="w-full h-auto object-contain bg-transparent select-none"
                     style={{ filter: 'drop-shadow(0 16px 24px rgba(0,0,0,0.45))' }}
@@ -376,7 +376,7 @@ export default function App() {
                   {/* Cercle vert clair #7ab87a - Image détourée sans fond blanc carré */}
                   <div className="w-[150px] h-[150px] sm:w-[165px] sm:h-[165px] lg:w-[175px] lg:h-[175px] rounded-full bg-[#7ab87a] p-3 shadow-lg flex items-center justify-center overflow-hidden border-2 border-white/20 transition-transform duration-300 hover:scale-105">
                     <img
-                      src="/src/assets/images/step_corn_harvest_transparent.png"
+                      src="/images/corn-harvest.png"
                       alt="Épi de maïs récolte"
                       className="w-full h-full object-contain bg-transparent select-none"
                       style={{ filter: 'drop-shadow(0 6px 10px rgba(0,0,0,0.18))' }}
@@ -445,7 +445,7 @@ export default function App() {
                   </div>
                   <div className="w-[150px] h-[150px] sm:w-[165px] sm:h-[165px] lg:w-[175px] lg:h-[175px] rounded-full bg-[#7ab87a] p-3 shadow-lg flex items-center justify-center overflow-hidden border-2 border-white/20 transition-transform duration-300 hover:scale-105">
                     <img
-                      src="/src/assets/images/product_roi_pop_naturel_transparent.png"
+                      src="/images/roi-pop-100-naturel-premium.png"
                       alt="Conditionnement ROI POP"
                       className="w-full h-full object-contain p-1 bg-transparent select-none"
                       style={{ filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.22))' }}
