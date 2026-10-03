@@ -33,7 +33,7 @@ export const PRODUCTS: Product[] = [
     description:
       'Contient 40 sachets individuels prêts à la vente. Maïs de qualité supérieure 100% naturel reconditionné et distribué à Yaoundé par SOTRAGA SARL.',
     longDescription:
-      'Le format économique par excellence pour les boutiques, alimentations, dépôts et revendeurs : ce grand sac de transport à poignée contient 40 sachets individuels de ROI POP 100% Naturel prêts à être vendus au détail. Maïs de qualité supérieure, reconditionné et distribué au Cameroun par SWIRABA SARL (BP:11729 Yaoundé, Mail: claudeken77@gmail.com). Production : Avril 2026 | Péremption : Avril 2028.',
+      'Le format économique par excellence pour les boutiques, alimentations, dépôts et revendeurs : ce grand sac de transport à poignée contient 40 sachets individuels de ROI POP 100% Naturel prêts à être vendus au détail. Maïs de qualité supérieure, reconditionné et distribué au Cameroun par SOTRAGA SARL (BP:11729 Yaoundé, Mail: claudeken77@gmail.com). Production : Avril 2026 | Péremption : Avril 2028.',
     price: '12 000 FCFA',
     priceNumeric: 12000,
     weight: 'Sac de 40 sachets (40 PQTS)',
