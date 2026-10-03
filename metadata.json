@@ -1,0 +1,6 @@
+{
+  "name": "DU ROI - Agroalimentaire & Import/Export",
+  "description": "Le Vrai Pouvoir du Maïs Naturel. Gamme premium de produits sains à base de maïs : ROI POP, CROKS! et transformation artisanale.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
