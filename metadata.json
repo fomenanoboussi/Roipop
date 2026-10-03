@@ -1,6 +1,6 @@
 {
-  "name": "DU ROI - Agroalimentaire & Import/Export",
-  "description": "Le Vrai Pouvoir du Maïs Naturel. Gamme premium de produits sains à base de maïs : ROI POP, CROKS! et transformation artisanale.",
+  "name": "DU ROI - Marque 100% Camerounaise",
+  "description": "DU ROI - Marque 100% Camerounaise. Fabriqué à Yaoundé, Cameroun avec du maïs local sélectionné. Gamme premium : ROI POP, CROKS!, épices et transformation artisanale.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

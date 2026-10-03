@@ -105,13 +105,22 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                 </p>
 
                 {/* Key benefits list */}
-                <div className="mb-4 sm:mb-5 space-y-1.5">
+                <div className="mb-3 space-y-1.5">
                   {product.benefits.slice(0, 3).map((benefit, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
                       <Check className="w-4 h-4 text-[#3a5f2d] shrink-0 mt-0.5" />
                       <span>{benefit}</span>
                     </div>
                   ))}
+                </div>
+
+                {/* Origin & Distributor box */}
+                <div className="mb-3.5 p-2.5 bg-[#f6eee2] rounded-xl border border-[#e8ddce] text-[11px] text-slate-700 flex items-start gap-2">
+                  <span className="text-sm shrink-0 mt-0.5">🇨🇲</span>
+                  <div>
+                    <span className="font-bold text-[#24381d] block">Traçabilité & Distribution :</span>
+                    <span className="leading-snug block">{product.nutrition.origin}</span>
+                  </div>
                 </div>
 
                 {/* Nutrition Highlights */}

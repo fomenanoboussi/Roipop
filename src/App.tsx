@@ -111,9 +111,21 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#fdf9f0] text-slate-800 flex flex-col font-['Inter',sans-serif] overflow-x-hidden selection:bg-[#3a5f2d] selection:text-white">
       {/* ============================================================== */}
+      {/* 0. TOP ANNOUNCEMENT BAR (Marque 100% Camerounaise) */}
+      {/* ============================================================== */}
+      <div className="w-full bg-[#27401e] text-[#f5efe0] py-2 px-3 sm:px-6 text-center text-[11px] sm:text-xs font-medium border-b border-white/10 flex items-center justify-center gap-1.5 sm:gap-2">
+        <span className="text-sm">🇨🇲</span>
+        <span className="font-heading font-bold tracking-wide">DU ROI</span>
+        <span className="text-white/40">•</span>
+        <span className="font-semibold text-emerald-200">Marque 100% Camerounaise</span>
+        <span className="hidden md:inline text-white/40">•</span>
+        <span className="hidden md:inline text-white/90">Fabriqué à Yaoundé, Cameroun avec du maïs local sélectionné</span>
+      </div>
+
+      {/* ============================================================== */}
       {/* 1. HEADER HERO (full width, fond vert #3a5f2d avec pattern épis) */}
       {/* ============================================================== */}
-      <section className="relative w-full bg-[#3a5f2d] overflow-hidden text-white pt-6 pb-14 sm:pt-8 sm:pb-16 lg:pt-14 lg:pb-24">
+      <section className="relative w-full bg-[#3a5f2d] overflow-hidden text-white pt-6 pb-14 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24">
         {/* Pattern épis de maïs subtil en opacité 10% */}
         <CornBackgroundPattern opacity={0.12} />
 
@@ -125,9 +137,14 @@ export default function App() {
             transition={{ duration: 0.5 }}
             className="flex items-center justify-between mb-6 sm:mb-8 lg:mb-12"
           >
-            <span className="font-heading font-extrabold text-xl sm:text-2xl tracking-wider text-[#f5efe0]">
-              DU ROI
-            </span>
+            <div className="flex items-center gap-2.5">
+              <span className="font-heading font-extrabold text-xl sm:text-2xl tracking-wider text-[#f5efe0]">
+                DU ROI
+              </span>
+              <span className="hidden sm:inline-block text-[10px] uppercase font-bold tracking-wider bg-white/15 px-2.5 py-0.5 rounded-full text-white/90 border border-white/10">
+                🇨🇲 Yaoundé, Cameroun
+              </span>
+            </div>
             <div className="flex items-center gap-3 sm:gap-4">
               <a
                 href="https://wa.me/237691250057?text=Bonjour%20DU%20ROI%2C%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20produits."
@@ -167,9 +184,12 @@ export default function App() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="inline-flex items-center gap-1.5 bg-[#4c753c] text-[#f5efe0] text-xs font-semibold px-3.5 py-1.5 rounded-full mb-4 sm:mb-6 border border-white/10 shadow-xs"
+                className="inline-flex items-center gap-2 bg-[#4c753c] text-[#f5efe0] text-xs font-semibold px-4 py-1.5 rounded-full mb-4 sm:mb-6 border border-white/15 shadow-xs"
               >
-                <span>100% Bien-Être Naturel</span>
+                <span>🇨🇲</span>
+                <span>Marque 100% Camerounaise</span>
+                <span className="text-white/40">•</span>
+                <span className="text-[#e2f0dc]">Fabriqué à Yaoundé</span>
               </motion.div>
 
               {/* Titre H1 bold blanc avec emoji épi 🌽 */}
@@ -177,10 +197,10 @@ export default function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.2 }}
-                className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[48px] text-white leading-[1.18] sm:leading-[1.15] mb-4 sm:mb-5 tracking-tight text-balance"
+                className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[46px] text-white leading-[1.18] sm:leading-[1.15] mb-4 sm:mb-5 tracking-tight text-balance"
               >
                 Le Vrai Pouvoir du<br className="hidden sm:inline" />
-                {' '}Maïs Naturel 🌽
+                {' '}Maïs Local Camerounais 🌽
               </motion.h1>
 
               {/* Description 16px blanc 80% opacité */}
@@ -188,9 +208,9 @@ export default function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.3 }}
-                className="text-white/80 text-xs sm:text-sm md:text-base leading-relaxed mb-6 sm:mb-8 max-w-lg font-normal"
+                className="text-white/85 text-xs sm:text-sm md:text-base leading-relaxed mb-6 sm:mb-8 max-w-lg font-normal"
               >
-                Découvrez notre gamme premium de produits à base de maïs, conçue pour préserver un maximum de bienfaits nutritionnels, grâce à la sagesse traditionnelle et à la transformation artisanale.
+                Fabriqué à Yaoundé, Cameroun avec du maïs local sélectionné. Découvrez notre gamme premium de snacks, épices pures et popcorns, conçue pour préserver un maximum de bienfaits nutritionnels grâce aux richesses de nos terroirs.
               </motion.p>
 
               {/* Bouton beige arrondi "Commencer" */}
@@ -203,7 +223,7 @@ export default function App() {
                 onClick={scrollToSolution}
                 className="w-full sm:w-auto px-8 py-3.5 bg-[#f5efe0] hover:bg-[#e9dfce] text-[#24381d] font-heading font-semibold text-xs sm:text-sm rounded-full transition-colors shadow-md hover:shadow-xl text-center cursor-pointer"
               >
-                Commencer
+                Découvrir la Collection
               </motion.button>
             </div>
 
@@ -225,7 +245,7 @@ export default function App() {
                   whileHover={{ scale: 1.1, y: -14, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
                   className="w-[30%] max-w-[120px] sm:max-w-[170px] -mr-5 sm:-mr-8 -mb-2 z-10 cursor-pointer shrink-0"
-                  onClick={() => openProduct(PRODUCTS[0])}
+                  onClick={() => openProduct(PRODUCTS.find((p) => p.id === 'roi-pop-25kg') || PRODUCTS[1])}
                   title="Voir ROI POP 25KG"
                 >
                   <img
@@ -243,7 +263,7 @@ export default function App() {
                   whileHover={{ scale: 1.12, y: -16, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
                   className="w-[26%] max-w-[105px] sm:max-w-[150px] -mr-4 sm:-mr-7 z-20 cursor-pointer shrink-0"
-                  onClick={() => openProduct(PRODUCTS[1])}
+                  onClick={() => openProduct(PRODUCTS.find((p) => p.id === 'croks-caramel') || PRODUCTS[2])}
                   title="Voir CROKS! Caramel au café"
                 >
                   <img
@@ -261,7 +281,7 @@ export default function App() {
                   whileHover={{ scale: 1.14, y: -16, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
                   className="w-[26%] max-w-[105px] sm:max-w-[150px] -mr-4 sm:-mr-7 z-25 cursor-pointer mt-1 sm:mt-2 shrink-0"
-                  onClick={() => openProduct(PRODUCTS[3])}
+                  onClick={() => openProduct(PRODUCTS.find((p) => p.id === 'noix-muscade') || PRODUCTS[4])}
                   title="Voir NOIX DE MUSCADE En Poudre"
                 >
                   <img
@@ -279,7 +299,7 @@ export default function App() {
                   whileHover={{ scale: 1.15, y: -12, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
                   className="w-[21%] max-w-[85px] sm:max-w-[125px] -mr-4 sm:-mr-6 z-30 cursor-pointer mt-6 sm:mt-9 shrink-0"
-                  onClick={() => openProduct(PRODUCTS[4])}
+                  onClick={() => openProduct(PRODUCTS.find((p) => p.id === 'du-roi-huile-30ml') || PRODUCTS[5])}
                   title="Voir DU ROI À l'huile végétale"
                 >
                   <img
@@ -297,7 +317,7 @@ export default function App() {
                   whileHover={{ scale: 1.1, y: -18, zIndex: 45 }}
                   whileTap={{ scale: 0.96 }}
                   className="w-[32%] max-w-[130px] sm:max-w-[185px] z-40 cursor-pointer shrink-0"
-                  onClick={() => openProduct(PRODUCTS[2])}
+                  onClick={() => openProduct(PRODUCTS.find((p) => p.id === 'roi-pop-naturel') || PRODUCTS[3])}
                   title="Voir ROI POP 100% Naturel"
                 >
                   <img
@@ -331,12 +351,12 @@ export default function App() {
           >
             {/* Titre "Notre Solution" vert foncé bold 32px */}
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#24381d] mb-3 sm:mb-4 tracking-tight">
-              Notre Solution
+              Notre Solution — 100% Camerounaise
             </h2>
 
             {/* Sous-texte */}
             <p className="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed mb-6 font-normal px-2 sm:px-0">
-              Des produits à base de maïs prêts à l'emploi qui préservent la valeur nutritionnelle et médicinale, ce qui facilite l'intégration dans la vie quotidienne.
+              Des produits à base de maïs local camerounais transformés à Yaoundé, prêts à l'emploi et conçus pour préserver toute leur valeur nutritionnelle et médicinale.
             </p>
 
             {/* Bouton outline gris "Voir tous nos produits" */}
@@ -351,7 +371,7 @@ export default function App() {
           </motion.div>
 
           {/* Grille responsive de cartes produits avec apparition décalée */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6">
             {PRODUCTS.filter((p) => p.id !== 'roi-pop-25kg').map((prod, index) => (
               <motion.div
                 key={prod.id}
@@ -734,11 +754,19 @@ export default function App() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 mb-10 sm:mb-12">
             {/* Colonne 1: DU ROI description */}
             <div>
-              <h4 className="font-heading font-extrabold text-base text-[#24381d] mb-2 sm:mb-3 tracking-wider">
-                DU ROI
-              </h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Produits de base sains et bons au goût, ancrés dans la tradition et soutenus par la science.
+              <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                <h4 className="font-heading font-extrabold text-base text-[#24381d] tracking-wider">
+                  DU ROI
+                </h4>
+                <span className="text-[10px] font-bold bg-[#e8f3e3] text-[#2d4a22] px-2 py-0.5 rounded-full border border-[#cbe4c5]">
+                  🇨🇲 100% Camerounais
+                </span>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed mb-2">
+                Marque 100% Camerounaise. Fabriqué à Yaoundé avec du maïs local sélectionné. Produits de base sains et bons au goût.
+              </p>
+              <p className="text-[11px] text-[#3a5f2d] font-semibold">
+                Ateliers & Siège : Yaoundé & Douala, Cameroun
               </p>
             </div>
 
@@ -971,15 +999,20 @@ export default function App() {
                       : 'bg-white text-slate-700 border border-slate-200'
                   }`}
                 >
-                  Gros volume 25KG
+                  Gros volume & Revendeurs
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
                 {PRODUCTS.filter((p) => {
                   if (selectedFilter === 'snacks') return p.category === 'Snacks';
                   if (selectedFilter === 'epices') return p.category === 'Épices';
-                  if (selectedFilter === 'pro') return p.id === 'roi-pop-25kg';
+                  if (selectedFilter === 'pro')
+                    return (
+                      p.category === 'Gros Volume' ||
+                      p.id === 'roi-pop-25kg' ||
+                      p.id === 'roi-pop-sac-eco-40'
+                    );
                   return true;
                 }).map((prod) => (
                   <motion.div
@@ -1066,18 +1099,19 @@ export default function App() {
               <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#24381d] mb-1.5 sm:mb-2">
                 À propos de DU ROI
               </h3>
-              <p className="text-xs text-[#3a5f2d] font-semibold mb-3 sm:mb-4">
-                Agroalimentaire & Import/Export
+              <p className="text-xs text-[#3a5f2d] font-bold mb-3 sm:mb-4 flex items-center gap-1.5">
+                <span>🇨🇲</span>
+                <span>Marque 100% Camerounaise • Fabriqué à Yaoundé</span>
               </p>
               <div className="text-xs text-slate-600 space-y-2.5 sm:space-y-3 leading-relaxed">
                 <p>
-                  <strong>DU ROI SARL</strong> est une entreprise agroalimentaire de référence spécialisée dans la valorisation, la transformation artisanale et la distribution de produits à base de maïs de qualité supérieure.
+                  <strong>DU ROI SARL</strong> est une marque agroalimentaire fièrement <strong>100% camerounaise</strong>. Basée à Yaoundé, notre entreprise valorise le travail des agriculteurs camerounais grâce à une sélection rigoureuse de maïs local cultivé dans nos régions.
                 </p>
                 <p>
-                  De nos terroirs agricoles aux foyers et aux salles de spectacle, nous garantissons une traçabilité irréprochable, un respect scrupuleux des normes sanitaires et une conservation optimale des micronutriments du maïs.
+                  Dans notre unité de production à <strong>Yaoundé, Cameroun</strong>, nous allions savoir-faire traditionnel et processus de transformation artisanale pour garantir une pureté totale : zéro OGM, conservation optimale des fibres et des polyphénols naturels.
                 </p>
                 <p>
-                  Nos marques phares : <strong>ROI POP</strong> (grains sélectionnés & popcorn prêt à consommer) et <strong>CROKS!</strong> (snack gourmand caramélisé).
+                  Nos gammes emblématiques : <strong>ROI POP</strong> (grains de maïs local d'expansion supérieure & popcorns prêts à consommer), <strong>CROKS!</strong> (snack gourmand caramélisé au chaudron), huiles d'assaisonnement et <strong>Épices pures</strong> (Noix de muscade sans sel, sans sucre).
                 </p>
               </div>
               <div className="mt-5 sm:mt-6 pt-4 border-t border-[#e8ded0] flex justify-end">
