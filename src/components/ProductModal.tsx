@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Product } from '../data/products';
-import { X, Check, ShoppingBag, Leaf, Award, ShieldCheck } from 'lucide-react';
+import { X, Check, ShoppingBag, Leaf } from 'lucide-react';
 
 interface ProductModalProps {
   product: Product | null;
@@ -29,28 +29,38 @@ export const ProductModal: React.FC<ProductModalProps> = ({
     }, 900);
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
-        onClick={onClose}
-      />
+  const handleClose = (e: React.MouseEvent | React.TouchEvent) => {
+    e.stopPropagation();
+    onClose();
+  };
 
-      {/* Modal Dialog */}
-      <div className="relative bg-[#fdf9f0] rounded-[24px] max-w-2xl w-full p-6 sm:p-8 shadow-2xl z-10 border border-[#e5dcce] overflow-hidden my-auto">
-        {/* Close Button */}
+  return (
+    <div
+      className="fixed inset-0 z-[9998] bg-black/50 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto"
+      onClick={handleClose}
+      style={{ pointerEvents: 'auto' }}
+    >
+      {/* Modal Dialog Content */}
+      <div
+        className="relative z-[9999] bg-[#fffdf3] rounded-[24px] max-w-2xl w-full p-5 sm:p-8 shadow-2xl border border-[#e5dcce] my-auto max-h-[90vh] overflow-y-auto"
+        style={{ pointerEvents: 'auto' }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close Button X - Ultra responsive touch target (44x44px touch-manipulation z-[9999]) */}
         <button
-          onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full bg-white text-slate-400 hover:text-slate-800 shadow-xs border border-slate-200 transition-colors"
-          aria-label="Fermer"
+          onClick={handleClose}
+          onTouchEnd={handleClose}
+          className="absolute top-4 right-4 z-[9999] w-11 h-11 rounded-full bg-white shadow-md flex items-center justify-center cursor-pointer touch-manipulation border border-slate-200 text-slate-600 hover:text-slate-900 active:scale-95 transition-transform"
+          style={{ pointerEvents: 'auto' }}
+          aria-label="Fermer la fenêtre"
+          type="button"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 pointer-events-none" />
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center pt-2 sm:pt-0">
           {/* Product Image Column */}
-          <div className="bg-transparent p-4 flex flex-col items-center justify-center relative group">
+          <div className="bg-transparent p-2 sm:p-4 flex flex-col items-center justify-center relative group">
             <div className="absolute top-0 left-0 bg-[#e8f3e3] text-[#2d4a22] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-xs">
               <Leaf className="w-3.5 h-3.5" />
               <span>{product.badge || '100% Naturel'}</span>
@@ -58,7 +68,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
             <img
               src={product.image}
               alt={product.name}
-              className="max-h-[260px] w-auto object-contain bg-transparent transition-transform duration-300 group-hover:scale-105"
+              className="max-h-[220px] sm:max-h-[260px] w-auto object-contain bg-transparent transition-transform duration-300 group-hover:scale-105 select-none"
               style={{ filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.2))' }}
             />
             <span className="mt-3 text-xs font-semibold text-slate-500">
@@ -68,10 +78,10 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
           {/* Details Column */}
           <div className="flex flex-col">
-            <h3 className="font-heading font-extrabold text-2xl text-[#24381d] leading-tight mb-1">
+            <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#24381d] leading-tight mb-1">
               {product.name}
             </h3>
-            <p className="text-sm text-[#3a5f2d] font-semibold mb-3">
+            <p className="text-xs sm:text-sm text-[#3a5f2d] font-semibold mb-3">
               {product.tagline}
             </p>
 
@@ -80,7 +90,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
             </p>
 
             {/* Key benefits list */}
-            <div className="mb-5 space-y-1.5">
+            <div className="mb-4 sm:mb-5 space-y-1.5">
               {product.benefits.slice(0, 3).map((benefit, idx) => (
                 <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
                   <Check className="w-4 h-4 text-[#3a5f2d] shrink-0 mt-0.5" />
@@ -90,7 +100,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
             </div>
 
             {/* Nutrition Highlights */}
-            <div className="grid grid-cols-3 gap-2 p-3 bg-white rounded-xl border border-[#e8ded0] text-center mb-5">
+            <div className="grid grid-cols-3 gap-2 p-3 bg-white rounded-xl border border-[#e8ded0] text-center mb-4 sm:mb-5">
               <div>
                 <span className="block text-[10px] text-slate-400 uppercase tracking-wider">Énergie</span>
                 <span className="font-bold text-xs text-[#24381d]">{product.nutrition.calories.split(' ')[0]}</span>
@@ -119,16 +129,18 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                 <div className="flex items-center bg-white border border-[#d8cdbd] rounded-full px-2 py-1">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-7 h-7 flex items-center justify-center text-slate-600 hover:text-black font-bold active:scale-95"
-                    aria-label="Diminuer"
+                    className="w-7 h-7 flex items-center justify-center text-slate-600 hover:text-black font-bold active:scale-95 touch-manipulation"
+                    aria-label="Diminuer la quantité"
+                    type="button"
                   >
                     -
                   </button>
                   <span className="w-6 text-center text-xs font-bold">{quantity}</span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="w-7 h-7 flex items-center justify-center text-slate-600 hover:text-black font-bold active:scale-95"
-                    aria-label="Augmenter"
+                    className="w-7 h-7 flex items-center justify-center text-slate-600 hover:text-black font-bold active:scale-95 touch-manipulation"
+                    aria-label="Augmenter la quantité"
+                    type="button"
                   >
                     +
                   </button>
@@ -137,11 +149,12 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                 <button
                   onClick={handleAdd}
                   disabled={added}
-                  className={`flex-1 sm:flex-none px-6 py-2.5 rounded-full font-semibold text-xs transition-all flex items-center justify-center gap-2 shadow-sm ${
+                  className={`flex-1 sm:flex-none px-6 py-2.5 rounded-full font-semibold text-xs transition-all flex items-center justify-center gap-2 shadow-sm touch-manipulation ${
                     added
                       ? 'bg-emerald-600 text-white'
                       : 'bg-[#3a5f2d] hover:bg-[#2d4a22] text-white active:scale-95'
                   }`}
+                  type="button"
                 >
                   <ShoppingBag className="w-3.5 h-3.5" />
                   <span>{added ? 'Ajouté !' : 'Commander'}</span>

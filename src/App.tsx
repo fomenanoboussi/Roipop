@@ -722,10 +722,20 @@ export default function App() {
                 </p>
               </div>
               <button
-                onClick={() => setIsCatalogModalOpen(false)}
-                className="p-2 rounded-full bg-white text-slate-400 hover:text-slate-800 shadow-xs border border-slate-200"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsCatalogModalOpen(false);
+                }}
+                onTouchEnd={(e) => {
+                  e.stopPropagation();
+                  setIsCatalogModalOpen(false);
+                }}
+                className="w-11 h-11 rounded-full bg-white text-slate-600 hover:text-slate-900 shadow-md border border-slate-200 flex items-center justify-center cursor-pointer touch-manipulation active:scale-95 transition-transform"
+                style={{ pointerEvents: 'auto' }}
+                aria-label="Fermer le catalogue"
+                type="button"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 pointer-events-none" />
               </button>
             </div>
 
@@ -818,10 +828,20 @@ export default function App() {
           />
           <div className="relative bg-[#fdf9f0] rounded-[24px] max-w-xl w-full p-5 sm:p-8 z-10 border border-[#e5dcce]">
             <button
-              onClick={() => setIsAboutModalOpen(false)}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full bg-white text-slate-400 hover:text-slate-800 shadow-xs border border-slate-200"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsAboutModalOpen(false);
+              }}
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+                setIsAboutModalOpen(false);
+              }}
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-11 h-11 rounded-full bg-white text-slate-600 hover:text-slate-900 shadow-md border border-slate-200 flex items-center justify-center cursor-pointer touch-manipulation active:scale-95 transition-transform z-20"
+              style={{ pointerEvents: 'auto' }}
+              aria-label="Fermer"
+              type="button"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 pointer-events-none" />
             </button>
             <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#24381d] mb-1.5 sm:mb-2">
               À propos de DU ROI
